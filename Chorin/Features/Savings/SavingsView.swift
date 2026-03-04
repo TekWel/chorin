@@ -112,7 +112,7 @@ struct SavingsView: View {
             GoalFormView(existingGoal: goal) { Task { await load() } }
         }
         .sheet(item: $goalToContribute) { goal in
-            ContributeFormView(goal: goal) { Task { await load() } }
+            ContributeFormView(goal: goal, totalSaved: totalSaved(for: goal)) { Task { await load() } }
         }
         .task { await load() }
         .task { await subscribeRealtime() }
