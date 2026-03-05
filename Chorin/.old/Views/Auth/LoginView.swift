@@ -13,7 +13,9 @@ struct LoginView: View {
     private var supabase: SupabaseClient { SupabaseManager.shared.client }
 
     var body: some View {
-        NavigationStack {
+        ZStack {
+            Theme.background.ignoresSafeArea()
+
             VStack(spacing: 32) {
                 Spacer()
 
@@ -21,31 +23,47 @@ struct LoginView: View {
                 VStack(spacing: 12) {
                     Image(systemName: "checklist")
                         .font(.system(size: 72))
-                        .foregroundStyle(.blue)
+                        .foregroundStyle(Theme.blue)
                     Text("Chorin'")
                         .font(.largeTitle)
                         .fontWeight(.bold)
+                        .foregroundStyle(Theme.textPrimary)
                     Text("Track chores. Earn allowance.")
                         .font(.title3)
-                        .foregroundStyle(.secondary)
+                        .foregroundStyle(Theme.textMuted)
                 }
 
-                // Form
+                // Form card
                 VStack(spacing: 16) {
-                    TextField("Email", text: $email)
-                        .textContentType(.emailAddress)
-                        .keyboardType(.emailAddress)
-                        .autocapitalization(.none)
-                        .textFieldStyle(.roundedBorder)
+                    VStack(spacing: 12) {
+                        TextField("Email", text: $email)
+                            .textContentType(.emailAddress)
+                            .keyboardType(.emailAddress)
+                            .autocapitalization(.none)
+                            .padding(12)
+                            .background(Theme.inputBg)
+                            .clipShape(RoundedRectangle(cornerRadius: 10))
+                            .foregroundStyle(Theme.textPrimary)
 
-                    SecureField("Password", text: $password)
-                        .textContentType(isSignUp ? .newPassword : .password)
-                        .textFieldStyle(.roundedBorder)
+                        SecureField("Password", text: $password)
+                            .textContentType(isSignUp ? .newPassword : .password)
+                            .padding(12)
+                            .background(Theme.inputBg)
+                            .clipShape(RoundedRectangle(cornerRadius: 10))
+                            .foregroundStyle(Theme.textPrimary)
+                    }
+                    .padding(20)
+                    .background(Theme.card)
+                    .clipShape(RoundedRectangle(cornerRadius: 16))
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 16)
+                            .strokeBorder(Theme.border, lineWidth: 1)
+                    )
 
                     if let error = errorMessage {
                         Text(error)
                             .font(.caption)
-                            .foregroundStyle(.red)
+                            .foregroundStyle(Theme.red)
                             .multilineTextAlignment(.center)
                     }
 
@@ -59,7 +77,7 @@ struct LoginView: View {
                         }
                         .frame(maxWidth: .infinity)
                         .padding()
-                        .background(.blue)
+                        .background(Theme.blue)
                         .foregroundStyle(.white)
                         .clipShape(RoundedRectangle(cornerRadius: 12))
                     }
@@ -71,7 +89,7 @@ struct LoginView: View {
                     } label: {
                         Text(isSignUp ? "Already have an account? Sign in" : "Don't have an account? Sign up")
                             .font(.subheadline)
-                            .foregroundStyle(.blue)
+                            .foregroundStyle(Theme.activeBlue)
                     }
                 }
                 .padding(.horizontal, 32)

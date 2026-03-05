@@ -34,7 +34,7 @@ struct EarningsView: View {
                             .foregroundStyle(.secondary)
                         Text(currentWeekTotal.formatted(.currency(code: "USD")))
                             .font(.system(size: 48, weight: .bold))
-                            .foregroundStyle(.green)
+                            .foregroundStyle(Theme.green)
                         Text(WeekHelper.weekLabel())
                             .font(.caption)
                             .foregroundStyle(.tertiary)
@@ -51,7 +51,7 @@ struct EarningsView: View {
                                 Text(day.date, format: .dateTime.weekday(.abbreviated).month().day())
                                 Spacer()
                                 Text(day.total.formatted(.currency(code: "USD")))
-                                    .foregroundStyle(.green)
+                                    .foregroundStyle(Theme.green)
                             }
                         }
                     }
@@ -88,13 +88,15 @@ struct EarningsView: View {
                                     Text(WeekHelper.weekLabel(for: weekStart))
                                     Spacer()
                                     Text(total.formatted(.currency(code: "USD")))
-                                        .foregroundStyle(total > 0 ? .green : .secondary)
+                                        .foregroundStyle(total > 0 ? Theme.green : Theme.textMuted)
                                 }
                             }
                         }
                     }
                 }
             }
+            .scrollContentBackground(.hidden)
+            .background(Theme.background)
             .navigationTitle("Earnings")
             .task { await loadCompletions() }
             .refreshable { await loadCompletions() }

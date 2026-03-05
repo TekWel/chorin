@@ -14,12 +14,12 @@ struct ChoreListView: View {
 
     private var todayTotal: Decimal {
         chores
-            .filter { $0.isCompleted }
+            .filter { $0.completedToday }
             .reduce(Decimal.zero) { $0 + $1.value }
     }
 
     private var pendingCount: Int {
-        chores.filter { !$0.isCompleted }.count
+        chores.filter { !$0.completedToday }.count
     }
 
     private var greeting: String {
@@ -113,21 +113,39 @@ struct ChoreListView: View {
                     .frame(maxWidth: .infinity)
                     Spacer()
                 } else {
-                    ScrollView {
-                        VStack(spacing: 10) {
-                            ForEach(chores) { chore in
-                                ChoreRowView(
-                                    chore: chore,
-                                    isParent: appState.member?.isParent == true,
-                                    onToggle: { Task { await toggle(chore) } },
-                                    onEdit: { Task { await loadChoreForEdit(chore.id) } },
-                                    onDelete: { Task { await archiveChore(chore.id) } }
-                                )
+                    List {
+                        ForEach(chores) { chore in
+                            ChoreRowView(
+                                chore: chore,
+                                isParent: appState.member?.isParent == true,
+                                onToggle: { Task { await toggle(chore) } },
+                                onEdit: { Task { await loadChoreForEdit(chore.id) } },
+                                onDelete: { Task { await archiveChore(chore.id) } }
+                            )
+                            .listRowBackground(Color.clear)
+                            .listRowSeparator(.hidden)
+                            .listRowInsets(EdgeInsets(top: 5, leading: 20, bottom: 5, trailing: 20))
+                            .swipeActions(edge: .leading, allowsFullSwipe: false) {
+                                if appState.member?.isParent == true {
+                                    Button { Task { await loadChoreForEdit(chore.id) } } label: {
+                                        Label("Edit", systemImage: "pencil")
+                                    }
+                                    .tint(ChorinTheme.primary)
+                                    Button(role: .destructive) { Task { await archiveChore(chore.id) } } label: {
+                                        Label("Delete", systemImage: "trash")
+                                    }
+                                }
                             }
                         }
-                        .padding(.horizontal, 20)
-                        .padding(.bottom, 100) // space for FAB + tab bar
+
+                        // Spacer for FAB
+                        Color.clear
+                            .frame(height: 60)
+                            .listRowBackground(Color.clear)
+                            .listRowSeparator(.hidden)
                     }
+                    .listStyle(.plain)
+                    .scrollContentBackground(.hidden)
                 }
 
                 if let error = errorMessage {
@@ -156,7 +174,7 @@ struct ChoreListView: View {
                                 .shadow(color: ChorinTheme.primary.opacity(0.4), radius: 12, y: 4)
                         }
                         .padding(.trailing, 20)
-                        .padding(.bottom, 80) // clear the tab bar
+                        .padding(.bottom, 50) // clear the tab bar
                     }
                 }
             }
@@ -198,8 +216,8 @@ struct ChoreListView: View {
                 name: chore.name,
                 value: chore.value,
                 icon: chore.icon,
-                completionId: chore.isCompleted ? nil : UUID(),
-                isCompleted: !chore.isCompleted
+                todayCompletionId: chore.completedToday ? nil : UUID(),
+                completedToday: !chore.completedToday
             )
         }
 

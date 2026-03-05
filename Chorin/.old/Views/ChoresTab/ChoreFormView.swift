@@ -48,9 +48,9 @@ struct ChoreFormView: View {
                                 Image(systemName: symbolName)
                                     .font(.title2)
                                     .frame(width: 44, height: 44)
-                                    .background(icon == symbolName ? Color.blue.opacity(0.2) : Color.clear)
+                                    .background(icon == symbolName ? Theme.blue.opacity(0.2) : Color.clear)
                                     .clipShape(RoundedRectangle(cornerRadius: 8))
-                                    .foregroundStyle(icon == symbolName ? .blue : .primary)
+                                    .foregroundStyle(icon == symbolName ? Theme.blue : .primary)
                             }
                             .buttonStyle(.plain)
                         }
@@ -61,7 +61,7 @@ struct ChoreFormView: View {
                 if let error = errorMessage {
                     Section {
                         Text(error)
-                            .foregroundStyle(.red)
+                            .foregroundStyle(Theme.red)
                             .font(.caption)
                     }
                 }

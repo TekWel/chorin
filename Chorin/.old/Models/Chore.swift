@@ -30,15 +30,15 @@ struct ChoreWithCompletion: Codable, Identifiable {
     let name: String
     let value: Decimal
     let icon: String
-    let todayCompletionId: UUID?
-    let completedToday: Bool
+    let completionId: UUID?
+    let isCompleted: Bool
 
     enum CodingKeys: String, CodingKey {
         case id
         case name
         case value
         case icon
-        case todayCompletionId = "today_completion_id"
-        case completedToday = "completed_today"
+        case completionId = "completion_id"
+        case isCompleted = "is_completed"
     }
 }

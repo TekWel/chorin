@@ -27,49 +27,53 @@ private struct ChooseView: View {
     @Binding var mode: OnboardingView.Mode
 
     var body: some View {
-        VStack(spacing: 32) {
-            Spacer()
+        ZStack {
+            Theme.background.ignoresSafeArea()
+            VStack(spacing: 32) {
+                Spacer()
 
-            VStack(spacing: 12) {
-                Image(systemName: "checklist")
-                    .font(.system(size: 72))
-                    .foregroundStyle(.blue)
-                Text("Chorin'")
-                    .font(.largeTitle)
-                    .fontWeight(.bold)
-                Text("Track chores. Earn allowance.")
-                    .font(.title3)
-                    .foregroundStyle(.secondary)
-            }
-
-            Spacer()
-
-            VStack(spacing: 16) {
-                Button {
-                    mode = .create
-                } label: {
-                    Label("Create Household", systemImage: "house.fill")
-                        .frame(maxWidth: .infinity)
-                        .padding()
-                        .background(.blue)
-                        .foregroundStyle(.white)
-                        .clipShape(RoundedRectangle(cornerRadius: 12))
+                VStack(spacing: 12) {
+                    Image(systemName: "checklist")
+                        .font(.system(size: 72))
+                        .foregroundStyle(Theme.blue)
+                    Text("Chorin'")
+                        .font(.largeTitle)
+                        .fontWeight(.bold)
+                        .foregroundStyle(Theme.textPrimary)
+                    Text("Track chores. Earn allowance.")
+                        .font(.title3)
+                        .foregroundStyle(Theme.textMuted)
                 }
 
-                Button {
-                    mode = .join
-                } label: {
-                    Label("Join with Invite Code", systemImage: "person.badge.plus")
-                        .frame(maxWidth: .infinity)
-                        .padding()
-                        .background(.green)
-                        .foregroundStyle(.white)
-                        .clipShape(RoundedRectangle(cornerRadius: 12))
-                }
-            }
-            .padding(.horizontal, 32)
+                Spacer()
 
-            Spacer()
+                VStack(spacing: 16) {
+                    Button {
+                        mode = .create
+                    } label: {
+                        Label("Create Household", systemImage: "house.fill")
+                            .frame(maxWidth: .infinity)
+                            .padding()
+                            .background(Theme.blue)
+                            .foregroundStyle(.white)
+                            .clipShape(RoundedRectangle(cornerRadius: 12))
+                    }
+
+                    Button {
+                        mode = .join
+                    } label: {
+                        Label("Join with Invite Code", systemImage: "person.badge.plus")
+                            .frame(maxWidth: .infinity)
+                            .padding()
+                            .background(Theme.green)
+                            .foregroundStyle(.white)
+                            .clipShape(RoundedRectangle(cornerRadius: 12))
+                    }
+                }
+                .padding(.horizontal, 32)
+
+                Spacer()
+            }
         }
         .navigationTitle("Welcome")
         .navigationBarTitleDisplayMode(.inline)
@@ -103,7 +107,7 @@ private struct CreateHouseholdView: View {
             if let error = errorMessage {
                 Section {
                     Text(error)
-                        .foregroundStyle(.red)
+                        .foregroundStyle(Theme.red)
                         .font(.caption)
                 }
             }
@@ -175,7 +179,7 @@ private struct JoinHouseholdView: View {
             if let error = errorMessage {
                 Section {
                     Text(error)
-                        .foregroundStyle(.red)
+                        .foregroundStyle(Theme.red)
                         .font(.caption)
                 }
             }

@@ -12,18 +12,18 @@ struct ChoreRowView: View {
             // MARK: - Checkbox
             Button(action: onToggle) {
                 RoundedRectangle(cornerRadius: 7)
-                    .fill(chore.isCompleted ? ChorinTheme.success : .clear)
+                    .fill(chore.completedToday ? ChorinTheme.success : .clear)
                     .frame(width: 24, height: 24)
                     .overlay(
                         RoundedRectangle(cornerRadius: 7)
                             .strokeBorder(
-                                chore.isCompleted ? ChorinTheme.success : ChorinTheme.surfaceBorder,
+                                chore.completedToday ? ChorinTheme.success : ChorinTheme.surfaceBorder,
                                 lineWidth: 1.5
                             )
                     )
                     .overlay(
                         Group {
-                            if chore.isCompleted {
+                            if chore.completedToday {
                                 Image(systemName: "checkmark")
                                     .font(.system(size: 12, weight: .bold))
                                     .foregroundStyle(.white)
@@ -43,8 +43,8 @@ struct ChoreRowView: View {
             // MARK: - Chore name
             Text(chore.name)
                 .font(.system(size: 14))
-                .foregroundStyle(chore.isCompleted ? ChorinTheme.textMuted : ChorinTheme.textPrimary)
-                .strikethrough(chore.isCompleted, color: ChorinTheme.textMuted)
+                .foregroundStyle(chore.completedToday ? ChorinTheme.textMuted : ChorinTheme.textPrimary)
+                .strikethrough(chore.completedToday, color: ChorinTheme.textMuted)
 
             Spacer()
 
@@ -61,18 +61,7 @@ struct ChoreRowView: View {
                 .strokeBorder(ChorinTheme.surfaceBorder, lineWidth: 1)
         )
         .contentShape(Rectangle())
-        .animation(.easeInOut(duration: 0.2), value: chore.isCompleted)
-        .swipeActions(edge: .trailing, allowsFullSwipe: false) {
-            if isParent {
-                Button(role: .destructive, action: onDelete) {
-                    Label("Delete", systemImage: "trash")
-                }
-                Button(action: onEdit) {
-                    Label("Edit", systemImage: "pencil")
-                }
-                .tint(.orange)
-            }
-        }
+        .animation(.easeInOut(duration: 0.2), value: chore.completedToday)
     }
 }
 
@@ -81,7 +70,7 @@ struct ChoreRowView: View {
         ChoreRowView(
             chore: ChoreWithCompletion(
                 id: UUID(), name: "Make bed", value: 1.00,
-                icon: "🛏️", completionId: nil, isCompleted: false
+                icon: "🛏️", todayCompletionId: nil, completedToday: false
             ),
             isParent: true,
             onToggle: {}, onEdit: {}, onDelete: {}
@@ -89,7 +78,7 @@ struct ChoreRowView: View {
         ChoreRowView(
             chore: ChoreWithCompletion(
                 id: UUID(), name: "Load dishwasher", value: 2.50,
-                icon: "🍽️", completionId: UUID(), isCompleted: true
+                icon: "🍽️", todayCompletionId: UUID(), completedToday: true
             ),
             isParent: false,
             onToggle: {}, onEdit: {}, onDelete: {}

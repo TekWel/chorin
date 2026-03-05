@@ -18,7 +18,7 @@ struct HouseholdView: View {
                 Section {
                     HStack {
                         Image(systemName: "house.fill")
-                            .foregroundStyle(.blue)
+                            .foregroundStyle(Theme.blue)
                             .font(.title2)
                         Text(household.name)
                             .font(.headline)
@@ -30,7 +30,7 @@ struct HouseholdView: View {
                         Text(household.inviteCode)
                             .font(.system(.title2, design: .monospaced))
                             .fontWeight(.semibold)
-                            .foregroundStyle(.blue)
+                            .foregroundStyle(Theme.activeBlue)
                         Spacer()
                         Button {
                             UIPasteboard.general.string = household.inviteCode
@@ -40,7 +40,7 @@ struct HouseholdView: View {
                             }
                         } label: {
                             Image(systemName: codeCopied ? "checkmark" : "doc.on.doc")
-                                .foregroundStyle(codeCopied ? .green : .blue)
+                                .foregroundStyle(codeCopied ? Theme.green : Theme.blue)
                         }
                     }
 
@@ -58,7 +58,7 @@ struct HouseholdView: View {
                     ForEach(members) { member in
                         HStack {
                             Image(systemName: "person.fill")
-                                .foregroundStyle(member.isParent ? .orange : .blue)
+                                .foregroundStyle(member.isParent ? Theme.orange : Theme.blue)
                             VStack(alignment: .leading) {
                                 Text(memberEmails[member.userId] ?? "Member")
                                     .font(.subheadline)
@@ -90,6 +90,8 @@ struct HouseholdView: View {
                 }
             }
         }
+        .scrollContentBackground(.hidden)
+        .background(Theme.background)
         .navigationTitle("Household")
         .task { await loadMembers() }
         .refreshable { await loadMembers() }

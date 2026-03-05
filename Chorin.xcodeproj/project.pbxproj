@@ -1,0 +1,516 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		00884CB12082FD5042B5CFC0 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559C2FEE43A76E9693349E3D /* OnboardingView.swift */; };
+		074A5C5A83819172C4CCC9C5 /* SupabaseClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EACCB68AD513BDCB97726F /* SupabaseClient.swift */; };
+		1114B5BED465BC21AED07328 /* EarningsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD162626A1F0647071EF8EFA /* EarningsView.swift */; };
+		24B224F2FF32C152466DD952 /* ChoreFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37C48166EB49951FEE7C8D0 /* ChoreFormView.swift */; };
+		2A259402B57B591F3B954830 /* ChorinApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF5755681EE06E57712380A /* ChorinApp.swift */; };
+		2B550B58AC2CE8E1FD83FD74 /* Household.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ADC6CFDE52164310D8E0CB1 /* Household.swift */; };
+		31C8F83EE5492B11F4B3885B /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E27BFC9F56F988EA87C2352 /* AppState.swift */; };
+		3E3F81F7991534AC02367177 /* ChorinButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CAB010634F78956B1274C0E /* ChorinButton.swift */; };
+		402A475F474053A1DABD9DC4 /* Chore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC2146522B2F1FDA3713576 /* Chore.swift */; };
+		4E96FC61E6D8389EFD8EE0DC /* SavingsGoal.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE61E48911325D4F09D369A5 /* SavingsGoal.swift */; };
+		627288CAA97CCACBBF36EA76 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79059E0D9CADFC0949E6978A /* Theme.swift */; };
+		7A6914D04866C91758AA5B9D /* HouseholdMember.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFB64CE7635FA0413F95E03 /* HouseholdMember.swift */; };
+		7CF91B1F381E9CECC811B539 /* Supabase in Frameworks */ = {isa = PBXBuildFile; productRef = 5134CF6E14303F10277AD2C5 /* Supabase */; };
+		904AB99FCCDD99BC4415D729 /* ChoreRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D315D569727075745BCDD55A /* ChoreRowView.swift */; };
+		A759FBF630DCC0F07E3C28E4 /* HouseholdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414025408B7512F710A2ABD0 /* HouseholdView.swift */; };
+		A8D82E44652262EC6DAA0516 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C97ECA3CF376D165CE44BC /* LoginView.swift */; };
+		B66937A91AAABEB7B687F19B /* ChoreListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4488C7F62EDEE93C459CBC1 /* ChoreListView.swift */; };
+		B85101F5069BD1F38ECC892E /* WeekHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5246FB8BFCA3D42771744AE /* WeekHelper.swift */; };
+		B9A88F5BB0622A55C1FFA216 /* ChorinNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B78147E4F15D8BE0DCB6F6 /* ChorinNavBar.swift */; };
+		C3FAF605B686962034CBB4CE /* ChorinTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206172A8FE237E764391DA58 /* ChorinTextField.swift */; };
+		CDCE8C68A185C7FA244B1388 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880F6A08751B12E6CC7DD09F /* ContentView.swift */; };
+		E1CAF7CB5F7EE706A0C0030F /* ContributeFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F86ABC2CAD9BD12A8F888D4 /* ContributeFormView.swift */; };
+		E4BE4E5ED1D68C33260367EA /* SavingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599799DC59872771818C8BCD /* SavingsView.swift */; };
+		F30FC234B78C9E2F60696D4D /* ChorinCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15579CE9CED9C04328207C61 /* ChorinCard.swift */; };
+		F986EC88E19004FE8C1552E9 /* WeekHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D993EA7926B7F8DF814F13E1 /* WeekHistoryView.swift */; };
+		FBF4AEA05A0B4DC7A22A060D /* ChoreCompletion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69EBB0EBBB29A148EE81B21C /* ChoreCompletion.swift */; };
+		FE57395D786E1D1C77AE511C /* GoalFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D040ECAE9D459F11DB104CF /* GoalFormView.swift */; };
+		FF8A1A4C896283C74D223CC1 /* SavingsContribution.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286771DEDA7860CF94F27B21 /* SavingsContribution.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0ADC6CFDE52164310D8E0CB1 /* Household.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Household.swift; sourceTree = "<group>"; };
+		15579CE9CED9C04328207C61 /* ChorinCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChorinCard.swift; sourceTree = "<group>"; };
+		18EACCB68AD513BDCB97726F /* SupabaseClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupabaseClient.swift; sourceTree = "<group>"; };
+		1E27BFC9F56F988EA87C2352 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		206172A8FE237E764391DA58 /* ChorinTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChorinTextField.swift; sourceTree = "<group>"; };
+		286771DEDA7860CF94F27B21 /* SavingsContribution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingsContribution.swift; sourceTree = "<group>"; };
+		3D040ECAE9D459F11DB104CF /* GoalFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalFormView.swift; sourceTree = "<group>"; };
+		414025408B7512F710A2ABD0 /* HouseholdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseholdView.swift; sourceTree = "<group>"; };
+		41C97ECA3CF376D165CE44BC /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		45B78147E4F15D8BE0DCB6F6 /* ChorinNavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChorinNavBar.swift; sourceTree = "<group>"; };
+		4CAB010634F78956B1274C0E /* ChorinButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChorinButton.swift; sourceTree = "<group>"; };
+		559C2FEE43A76E9693349E3D /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		599799DC59872771818C8BCD /* SavingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingsView.swift; sourceTree = "<group>"; };
+		69EBB0EBBB29A148EE81B21C /* ChoreCompletion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoreCompletion.swift; sourceTree = "<group>"; };
+		6F86ABC2CAD9BD12A8F888D4 /* ContributeFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContributeFormView.swift; sourceTree = "<group>"; };
+		79059E0D9CADFC0949E6978A /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		880F6A08751B12E6CC7DD09F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		8AFB64CE7635FA0413F95E03 /* HouseholdMember.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseholdMember.swift; sourceTree = "<group>"; };
+		D315D569727075745BCDD55A /* ChoreRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoreRowView.swift; sourceTree = "<group>"; };
+		D4488C7F62EDEE93C459CBC1 /* ChoreListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoreListView.swift; sourceTree = "<group>"; };
+		D92245041A949E37D15B3C54 /* Chorin.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Chorin.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D993EA7926B7F8DF814F13E1 /* WeekHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekHistoryView.swift; sourceTree = "<group>"; };
+		DCF5755681EE06E57712380A /* ChorinApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChorinApp.swift; sourceTree = "<group>"; };
+		DD162626A1F0647071EF8EFA /* EarningsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarningsView.swift; sourceTree = "<group>"; };
+		E37C48166EB49951FEE7C8D0 /* ChoreFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoreFormView.swift; sourceTree = "<group>"; };
+		E5246FB8BFCA3D42771744AE /* WeekHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekHelper.swift; sourceTree = "<group>"; };
+		EE61E48911325D4F09D369A5 /* SavingsGoal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingsGoal.swift; sourceTree = "<group>"; };
+		FEC2146522B2F1FDA3713576 /* Chore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chore.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E4491048504DA3A8D796EA34 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7CF91B1F381E9CECC811B539 /* Supabase in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0B2B22B7AB66412AE5139DCC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D92245041A949E37D15B3C54 /* Chorin.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		20AF8087241208520757797A /* App */ = {
+			isa = PBXGroup;
+			children = (
+				DCF5755681EE06E57712380A /* ChorinApp.swift */,
+				880F6A08751B12E6CC7DD09F /* ContentView.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		252D30A55A7410EC82252B87 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				4CAB010634F78956B1274C0E /* ChorinButton.swift */,
+				15579CE9CED9C04328207C61 /* ChorinCard.swift */,
+				45B78147E4F15D8BE0DCB6F6 /* ChorinNavBar.swift */,
+				206172A8FE237E764391DA58 /* ChorinTextField.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		37DF7CF2D45D55C8AA6D2ACC /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				41C97ECA3CF376D165CE44BC /* LoginView.swift */,
+				559C2FEE43A76E9693349E3D /* OnboardingView.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		3AE269CEB5486DDA880DC52F /* Savings */ = {
+			isa = PBXGroup;
+			children = (
+				6F86ABC2CAD9BD12A8F888D4 /* ContributeFormView.swift */,
+				3D040ECAE9D459F11DB104CF /* GoalFormView.swift */,
+				599799DC59872771818C8BCD /* SavingsView.swift */,
+			);
+			path = Savings;
+			sourceTree = "<group>";
+		};
+		421070E3D7EEDC46F6E8CE3A /* Design */ = {
+			isa = PBXGroup;
+			children = (
+				79059E0D9CADFC0949E6978A /* Theme.swift */,
+				252D30A55A7410EC82252B87 /* Components */,
+			);
+			path = Design;
+			sourceTree = "<group>";
+		};
+		4BD45135FB83EF1A8A8847A8 /* Chores */ = {
+			isa = PBXGroup;
+			children = (
+				E37C48166EB49951FEE7C8D0 /* ChoreFormView.swift */,
+				D4488C7F62EDEE93C459CBC1 /* ChoreListView.swift */,
+				D315D569727075745BCDD55A /* ChoreRowView.swift */,
+			);
+			path = Chores;
+			sourceTree = "<group>";
+		};
+		6C2A7D6D0C748C1AB413FA15 /* Household */ = {
+			isa = PBXGroup;
+			children = (
+				414025408B7512F710A2ABD0 /* HouseholdView.swift */,
+			);
+			path = Household;
+			sourceTree = "<group>";
+		};
+		6D46A9EFA4C64028AED9F287 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FEC2146522B2F1FDA3713576 /* Chore.swift */,
+				69EBB0EBBB29A148EE81B21C /* ChoreCompletion.swift */,
+				0ADC6CFDE52164310D8E0CB1 /* Household.swift */,
+				8AFB64CE7635FA0413F95E03 /* HouseholdMember.swift */,
+				286771DEDA7860CF94F27B21 /* SavingsContribution.swift */,
+				EE61E48911325D4F09D369A5 /* SavingsGoal.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		7BE6FBFA568C20F2BFA9119B /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				37DF7CF2D45D55C8AA6D2ACC /* Auth */,
+				4BD45135FB83EF1A8A8847A8 /* Chores */,
+				C7705F8B28FE10BE119ED19D /* Earnings */,
+				6C2A7D6D0C748C1AB413FA15 /* Household */,
+				3AE269CEB5486DDA880DC52F /* Savings */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		A95ACC7D914B27ACCEC78AAF /* Chorin */ = {
+			isa = PBXGroup;
+			children = (
+				20AF8087241208520757797A /* App */,
+				421070E3D7EEDC46F6E8CE3A /* Design */,
+				7BE6FBFA568C20F2BFA9119B /* Features */,
+				6D46A9EFA4C64028AED9F287 /* Models */,
+				D59EBDA13CE8C598A8F48BDB /* Services */,
+			);
+			path = Chorin;
+			sourceTree = "<group>";
+		};
+		C03FF8B5D5DD18B46F6CC5E3 = {
+			isa = PBXGroup;
+			children = (
+				A95ACC7D914B27ACCEC78AAF /* Chorin */,
+				0B2B22B7AB66412AE5139DCC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C7705F8B28FE10BE119ED19D /* Earnings */ = {
+			isa = PBXGroup;
+			children = (
+				DD162626A1F0647071EF8EFA /* EarningsView.swift */,
+				D993EA7926B7F8DF814F13E1 /* WeekHistoryView.swift */,
+			);
+			path = Earnings;
+			sourceTree = "<group>";
+		};
+		D59EBDA13CE8C598A8F48BDB /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				1E27BFC9F56F988EA87C2352 /* AppState.swift */,
+				18EACCB68AD513BDCB97726F /* SupabaseClient.swift */,
+				E5246FB8BFCA3D42771744AE /* WeekHelper.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FCE07F084FAC39953DC0A949 /* Chorin */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 677D269C29ACDB10DCC05A69 /* Build configuration list for PBXNativeTarget "Chorin" */;
+			buildPhases = (
+				F674263ED851305A690F7CD9 /* Sources */,
+				E4491048504DA3A8D796EA34 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Chorin;
+			packageProductDependencies = (
+				5134CF6E14303F10277AD2C5 /* Supabase */,
+			);
+			productName = Chorin;
+			productReference = D92245041A949E37D15B3C54 /* Chorin.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		99DFAB03C18BFA7E483682A4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1600;
+				TargetAttributes = {
+				};
+			};
+			buildConfigurationList = C9C77E623BBBCF655961508A /* Build configuration list for PBXProject "Chorin" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = C03FF8B5D5DD18B46F6CC5E3;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				3BC5D86E3B8F3971BC8E293D /* XCRemoteSwiftPackageReference "supabase-swift" */,
+			);
+			preferredProjectObjectVersion = 77;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FCE07F084FAC39953DC0A949 /* Chorin */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F674263ED851305A690F7CD9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				31C8F83EE5492B11F4B3885B /* AppState.swift in Sources */,
+				402A475F474053A1DABD9DC4 /* Chore.swift in Sources */,
+				FBF4AEA05A0B4DC7A22A060D /* ChoreCompletion.swift in Sources */,
+				24B224F2FF32C152466DD952 /* ChoreFormView.swift in Sources */,
+				B66937A91AAABEB7B687F19B /* ChoreListView.swift in Sources */,
+				904AB99FCCDD99BC4415D729 /* ChoreRowView.swift in Sources */,
+				2A259402B57B591F3B954830 /* ChorinApp.swift in Sources */,
+				3E3F81F7991534AC02367177 /* ChorinButton.swift in Sources */,
+				F30FC234B78C9E2F60696D4D /* ChorinCard.swift in Sources */,
+				B9A88F5BB0622A55C1FFA216 /* ChorinNavBar.swift in Sources */,
+				C3FAF605B686962034CBB4CE /* ChorinTextField.swift in Sources */,
+				CDCE8C68A185C7FA244B1388 /* ContentView.swift in Sources */,
+				E1CAF7CB5F7EE706A0C0030F /* ContributeFormView.swift in Sources */,
+				1114B5BED465BC21AED07328 /* EarningsView.swift in Sources */,
+				FE57395D786E1D1C77AE511C /* GoalFormView.swift in Sources */,
+				2B550B58AC2CE8E1FD83FD74 /* Household.swift in Sources */,
+				7A6914D04866C91758AA5B9D /* HouseholdMember.swift in Sources */,
+				A759FBF630DCC0F07E3C28E4 /* HouseholdView.swift in Sources */,
+				A8D82E44652262EC6DAA0516 /* LoginView.swift in Sources */,
+				00884CB12082FD5042B5CFC0 /* OnboardingView.swift in Sources */,
+				FF8A1A4C896283C74D223CC1 /* SavingsContribution.swift in Sources */,
+				4E96FC61E6D8389EFD8EE0DC /* SavingsGoal.swift in Sources */,
+				E4BE4E5ED1D68C33260367EA /* SavingsView.swift in Sources */,
+				074A5C5A83819172C4CCC9C5 /* SupabaseClient.swift in Sources */,
+				627288CAA97CCACBBF36EA76 /* Theme.swift in Sources */,
+				B85101F5069BD1F38ECC892E /* WeekHelper.swift in Sources */,
+				F986EC88E19004FE8C1552E9 /* WeekHistoryView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		43F52D39E96DF33D1E811741 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		5E49B2D98CC030A64D358A50 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.chorin.app;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DA3F6BDCC8B163145700DF97 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.chorin.app;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		DE07FE429A692FD47579B23B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		677D269C29ACDB10DCC05A69 /* Build configuration list for PBXNativeTarget "Chorin" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5E49B2D98CC030A64D358A50 /* Debug */,
+				DA3F6BDCC8B163145700DF97 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		C9C77E623BBBCF655961508A /* Build configuration list for PBXProject "Chorin" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				43F52D39E96DF33D1E811741 /* Debug */,
+				DE07FE429A692FD47579B23B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		3BC5D86E3B8F3971BC8E293D /* XCRemoteSwiftPackageReference "supabase-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/supabase/supabase-swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5134CF6E14303F10277AD2C5 /* Supabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3BC5D86E3B8F3971BC8E293D /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = Supabase;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 99DFAB03C18BFA7E483682A4 /* Project object */;
+}

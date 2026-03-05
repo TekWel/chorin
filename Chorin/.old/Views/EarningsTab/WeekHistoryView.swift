@@ -28,7 +28,7 @@ struct WeekHistoryView: View {
                         .foregroundStyle(.secondary)
                     Text(weekTotal.formatted(.currency(code: "USD")))
                         .font(.system(size: 40, weight: .bold))
-                        .foregroundStyle(.green)
+                        .foregroundStyle(Theme.green)
                 }
                 .frame(maxWidth: .infinity)
                 .padding(.vertical, 8)
@@ -42,7 +42,7 @@ struct WeekHistoryView: View {
                             Text(day.date, format: .dateTime.weekday(.wide).month().day())
                             Spacer()
                             Text(day.total.formatted(.currency(code: "USD")))
-                                .foregroundStyle(.green)
+                                .foregroundStyle(Theme.green)
                         }
                     }
                 }
@@ -77,6 +77,8 @@ struct WeekHistoryView: View {
                 }
             }
         }
+        .scrollContentBackground(.hidden)
+        .background(Theme.background)
         .navigationTitle("Week Detail")
         .navigationBarTitleDisplayMode(.inline)
     }

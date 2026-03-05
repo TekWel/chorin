@@ -40,29 +40,29 @@ struct SavingsView: View {
                                     HStack {
                                         Image(systemName: goal.icon)
                                             .font(.title2)
-                                            .foregroundStyle(.blue)
+                                            .foregroundStyle(Theme.blue)
                                         VStack(alignment: .leading, spacing: 2) {
                                             Text(goal.name)
                                                 .font(.headline)
                                             if goal.autoPercent > 0 {
                                                 Text("Auto-save \(goal.autoPercent.formatted(.number))%")
                                                     .font(.caption)
-                                                    .foregroundStyle(.secondary)
+                                                    .foregroundStyle(Theme.textMuted)
                                             }
                                         }
                                         Spacer()
                                         VStack(alignment: .trailing, spacing: 2) {
                                             Text(saved.formatted(.currency(code: "USD")))
                                                 .fontWeight(.semibold)
-                                                .foregroundStyle(.green)
+                                                .foregroundStyle(Theme.green)
                                             Text("of \(goal.targetAmount.formatted(.currency(code: "USD")))")
                                                 .font(.caption)
-                                                .foregroundStyle(.secondary)
+                                                .foregroundStyle(Theme.textMuted)
                                         }
                                     }
 
                                     ProgressView(value: progress)
-                                        .tint(.green)
+                                        .tint(Theme.green)
                                 }
                                 .padding(.vertical, 4)
 
@@ -84,6 +84,8 @@ struct SavingsView: View {
                             }
                         }
                     }
+                    .scrollContentBackground(.hidden)
+                    .background(Theme.background)
                 }
             }
             .navigationTitle("Savings")
@@ -112,7 +114,7 @@ struct SavingsView: View {
             if let error = errorMessage {
                 Text(error)
                     .font(.caption)
-                    .foregroundStyle(.red)
+                    .foregroundStyle(Theme.red)
                     .padding()
             }
         }

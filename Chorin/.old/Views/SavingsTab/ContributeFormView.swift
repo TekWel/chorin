@@ -28,14 +28,14 @@ struct ContributeFormView: View {
                 Section {
                     HStack {
                         Image(systemName: goal.icon)
-                            .foregroundStyle(.blue)
+                            .foregroundStyle(Theme.blue)
                         Text("Saving toward: \(goal.name)")
                     }
                 }
 
                 if let error = errorMessage {
                     Section {
-                        Text(error).foregroundStyle(.red).font(.caption)
+                        Text(error).foregroundStyle(Theme.red).font(.caption)
                     }
                 }
             }

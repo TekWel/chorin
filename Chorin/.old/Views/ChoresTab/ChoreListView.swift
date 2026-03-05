@@ -29,7 +29,7 @@ struct ChoreListView: View {
                 Section {
                     HStack {
                         Image(systemName: "calendar")
-                            .foregroundStyle(.blue)
+                            .foregroundStyle(Theme.blue)
                         Text(Date(), format: .dateTime.weekday(.wide).month().day())
                             .font(.headline)
                     }
@@ -73,7 +73,7 @@ struct ChoreListView: View {
                             Spacer()
                             Text(todayTotal.formatted(.currency(code: "USD")))
                                 .fontWeight(.bold)
-                                .foregroundStyle(.green)
+                                .foregroundStyle(Theme.green)
                         }
                     }
                 }
@@ -81,11 +81,13 @@ struct ChoreListView: View {
                 if let error = errorMessage {
                     Section {
                         Text(error)
-                            .foregroundStyle(.red)
+                            .foregroundStyle(Theme.red)
                             .font(.caption)
                     }
                 }
             }
+            .scrollContentBackground(.hidden)
+            .background(Theme.background)
             .navigationTitle("Chores")
             .toolbar {
                 if appState.member?.isParent == true {
@@ -96,11 +98,11 @@ struct ChoreListView: View {
                     }
                 }
             }
-            .sheet(isPresented: $showingAddChore) {
-                ChoreFormView { Task { await loadChores() } }
+            .sheet(isPresented: $showingAddChore, onDismiss: { Task { await loadChores() } }) {
+                ChoreFormView { }
             }
-            .sheet(item: $choreToEdit) { chore in
-                ChoreFormView(existingChore: chore) { Task { await loadChores() } }
+            .sheet(item: $choreToEdit, onDismiss: { Task { await loadChores() } }) { chore in
+                ChoreFormView(existingChore: chore) { }
             }
             .task { await loadChores() }
             .task { await subscribeRealtime() }

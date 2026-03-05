@@ -13,14 +13,14 @@ struct ChoreRowView: View {
             Button(action: onToggle) {
                 Image(systemName: chore.isCompleted ? "checkmark.circle.fill" : "circle")
                     .font(.title2)
-                    .foregroundStyle(chore.isCompleted ? .green : .gray)
+                    .foregroundStyle(chore.isCompleted ? Theme.green : .gray)
             }
             .buttonStyle(.plain)
 
             // Chore icon
             Image(systemName: chore.icon)
                 .font(.title3)
-                .foregroundStyle(.blue)
+                .foregroundStyle(Theme.blue)
                 .frame(width: 28)
 
             // Chore name
@@ -34,7 +34,7 @@ struct ChoreRowView: View {
             Text(chore.value.formatted(.currency(code: "USD")))
                 .font(.subheadline)
                 .fontWeight(.medium)
-                .foregroundStyle(chore.isCompleted ? .green : .secondary)
+                .foregroundStyle(chore.isCompleted ? Theme.green : Theme.textMuted)
         }
         .padding(.vertical, 4)
         .contentShape(Rectangle())
@@ -47,7 +47,7 @@ struct ChoreRowView: View {
                 Button(action: onEdit) {
                     Label("Edit", systemImage: "pencil")
                 }
-                .tint(.orange)
+                .tint(Theme.orange)
             }
         }
     }

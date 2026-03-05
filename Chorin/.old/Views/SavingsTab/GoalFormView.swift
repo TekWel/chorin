@@ -47,7 +47,7 @@ struct GoalFormView: View {
                                 .foregroundStyle(.secondary)
                         }
                         Slider(value: $autoPercent, in: 0...100, step: 5)
-                            .tint(.green)
+                            .tint(Theme.green)
                     }
                 } footer: {
                     Text("Automatically deposit this % of each chore completion into this goal.")
@@ -62,9 +62,9 @@ struct GoalFormView: View {
                                 Image(systemName: symbolName)
                                     .font(.title2)
                                     .frame(width: 44, height: 44)
-                                    .background(icon == symbolName ? Color.blue.opacity(0.2) : Color.clear)
+                                    .background(icon == symbolName ? Theme.blue.opacity(0.2) : Color.clear)
                                     .clipShape(RoundedRectangle(cornerRadius: 8))
-                                    .foregroundStyle(icon == symbolName ? .blue : .primary)
+                                    .foregroundStyle(icon == symbolName ? Theme.blue : .primary)
                             }
                             .buttonStyle(.plain)
                         }
@@ -74,7 +74,7 @@ struct GoalFormView: View {
 
                 if let error = errorMessage {
                     Section {
-                        Text(error).foregroundStyle(.red).font(.caption)
+                        Text(error).foregroundStyle(Theme.red).font(.caption)
                     }
                 }
             }
@@ -146,8 +146,6 @@ struct GoalFormView: View {
         }
     }
 }
-
-extension SavingsGoal: @retroactive Identifiable {}
 
 #Preview {
     GoalFormView(onSave: {})

@@ -4,11 +4,30 @@ import SwiftUI
 struct ChorinApp: App {
     @State private var appState = AppState()
 
+    init() {
+        let tabAppearance = UITabBarAppearance()
+        tabAppearance.configureWithOpaqueBackground()
+        tabAppearance.backgroundColor = UIColor(white: 0.07, alpha: 1)
+        UITabBar.appearance().standardAppearance = tabAppearance
+        UITabBar.appearance().scrollEdgeAppearance = tabAppearance
+
+        let navAppearance = UINavigationBarAppearance()
+        navAppearance.configureWithOpaqueBackground()
+        navAppearance.backgroundColor = UIColor(white: 0.04, alpha: 1)
+        navAppearance.titleTextAttributes = [.foregroundColor: UIColor.white]
+        navAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
+        UINavigationBar.appearance().standardAppearance = navAppearance
+        UINavigationBar.appearance().scrollEdgeAppearance = navAppearance
+
+        UITableView.appearance().backgroundColor = .clear
+    }
+
     var body: some Scene {
         WindowGroup {
             RootView()
                 .environment(appState)
                 .task { await appState.bootstrap() }
+                .preferredColorScheme(.dark)
         }
     }
 }

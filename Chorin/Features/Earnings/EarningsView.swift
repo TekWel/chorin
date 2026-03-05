@@ -51,33 +51,34 @@ struct EarningsView: View {
     // MARK: - Body
 
     var body: some View {
-        NavigationStack {
-            ZStack {
-                ChorinTheme.background.ignoresSafeArea()
+        ZStack {
+            ChorinTheme.background.ignoresSafeArea()
 
-                if isLoading && completions.isEmpty {
-                    ProgressView()
-                        .tint(ChorinTheme.textMuted)
-                } else {
-                    ScrollView {
-                        VStack(spacing: 20) {
-                            heroCard
-                            dailyBreakdownSection
-                            perChoreSection
-                            pastWeeksSection
-                        }
-                        .padding(.horizontal, 20)
-                        .padding(.top, 8)
-                        .padding(.bottom, 100)
+            if isLoading && completions.isEmpty {
+                ProgressView()
+                    .tint(ChorinTheme.textMuted)
+            } else {
+                ScrollView {
+                    VStack(spacing: 20) {
+                        // Custom header
+                        Text("Earnings")
+                            .font(.system(size: 18, weight: .semibold))
+                            .foregroundStyle(ChorinTheme.textPrimary)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+
+                        heroCard
+                        dailyBreakdownSection
+                        perChoreSection
+                        pastWeeksSection
                     }
+                    .padding(.horizontal, 20)
+                    .padding(.top, 8)
+                    .padding(.bottom, 16)
                 }
             }
-            .navigationTitle("Earnings")
-            .navigationBarTitleDisplayMode(.inline)
-            .toolbarColorScheme(.dark, for: .navigationBar)
-            .task { await loadData() }
-            .refreshable { await loadData() }
         }
+        .task { await loadData() }
+        .refreshable { await loadData() }
     }
 
     // MARK: - Hero Card
