@@ -7,7 +7,7 @@ import GoalCard from "@/components/GoalCard";
 import GoalForm from "@/components/GoalForm";
 import ContributeForm from "@/components/ContributeForm";
 import BottomNav from "@/components/BottomNav";
-import ProfileButton from "@/components/ProfileButton";
+
 import Logo from "@/components/Logo";
 import type { SavingsGoal, GoalWithProgress } from "@/lib/types";
 
@@ -132,10 +132,7 @@ export default function SavingsPage() {
     <div className="min-h-screen bg-gray-950 pb-20">
       {/* Header */}
       <div className="bg-gray-900 border-b border-gray-800 px-4 pt-6 pb-4">
-        <div className="flex items-center justify-between">
-          <Logo size="md" />
-          <ProfileButton />
-        </div>
+        <Logo size="md" />
         <h1 className="text-lg font-semibold text-white mt-1">
           Savings Goals
         </h1>

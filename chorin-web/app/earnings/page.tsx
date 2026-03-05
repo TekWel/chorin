@@ -13,7 +13,7 @@ import {
 } from "@/lib/week-helpers";
 import WeekSummaryCard from "@/components/WeekSummaryCard";
 import BottomNav from "@/components/BottomNav";
-import ProfileButton from "@/components/ProfileButton";
+
 import Logo from "@/components/Logo";
 import type { ChoreCompletion, Chore } from "@/lib/types";
 
@@ -138,10 +138,7 @@ export default function EarningsPage() {
     <div className="min-h-screen bg-gray-950 pb-20">
       {/* Header */}
       <div className="bg-gray-900 border-b border-gray-800 px-4 pt-6 pb-4">
-        <div className="flex items-center justify-between">
-          <Logo size="md" />
-          <ProfileButton />
-        </div>
+        <Logo size="md" />
       </div>
 
       {/* This Week Total */}

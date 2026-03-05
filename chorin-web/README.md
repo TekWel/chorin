@@ -98,7 +98,6 @@ chorin-web/
 │   └── auth/callback/route.ts  # OAuth callback
 ├── components/
 │   ├── BottomNav.tsx           # Bottom tab bar (Chores / Earnings)
-│   ├── ProfileButton.tsx       # Top-right profile circle
 │   ├── Logo.tsx                # Cursive "Chorin'" logo
 │   ├── ChoreRow.tsx            # Chore with checkbox
 │   ├── ChoreForm.tsx           # Add/edit chore modal

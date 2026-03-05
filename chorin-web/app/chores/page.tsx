@@ -7,7 +7,7 @@ import { todayLabel, formatDate, formatCurrency } from "@/lib/week-helpers";
 import ChoreRow from "@/components/ChoreRow";
 import ChoreForm from "@/components/ChoreForm";
 import BottomNav from "@/components/BottomNav";
-import ProfileButton from "@/components/ProfileButton";
+
 import Logo from "@/components/Logo";
 import type { Chore, ChoreWithCompletion } from "@/lib/types";
 
@@ -184,10 +184,7 @@ export default function ChoresPage() {
   return (
     <div className="min-h-screen bg-gray-950 pb-20">
       <div className="bg-gray-900 border-b border-gray-800 px-4 pt-6 pb-4">
-        <div className="flex items-center justify-between">
-          <Logo size="md" />
-          <ProfileButton />
-        </div>
+        <Logo size="md" />
         <div className="mt-1 text-sm text-gray-400">{todayLabel()}</div>
       </div>
 

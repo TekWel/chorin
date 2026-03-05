@@ -34,23 +34,10 @@ struct ChoreListView: View {
 
             VStack(alignment: .leading, spacing: 0) {
                 // MARK: - Top bar
-                HStack {
-                    Text("Chorin'")
-                        .font(.system(size: 22, weight: .bold, design: .serif))
-                        .italic()
-                        .foregroundStyle(ChorinTheme.primary)
-
-                    Spacer()
-
-                    RoundedRectangle(cornerRadius: 8)
-                        .fill(ChorinTheme.tertiary)
-                        .frame(width: 32, height: 32)
-                        .overlay(
-                            Image(systemName: "person.fill")
-                                .font(.system(size: 14))
-                                .foregroundStyle(ChorinTheme.textMuted)
-                        )
-                }
+                Text("Chorin'")
+                    .font(.system(size: 22, weight: .bold, design: .serif))
+                    .italic()
+                    .foregroundStyle(ChorinTheme.primary)
                 .padding(.horizontal, 20)
                 .padding(.top, 8)
                 .padding(.bottom, 16)
